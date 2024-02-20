@@ -1,0 +1,22 @@
+[
+  {
+    "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+    "self": "https://inaracademy.atlassian.net/rest/api/3/project/10000",
+    "id": "10000",
+    "key": "T1",
+    "name": "TEAM 1",
+    "avatarUrls": {
+      "48x48": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10407",
+      "24x24": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10407?size=small",
+      "16x16": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10407?size=xsmall",
+      "32x32": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10407?size=medium"
+    },
+    "projectTypeKey": "software",
+    "simplified": true,
+    "style": "next-gen",
+    "isPrivate": false,
+    "properties": {},
+    "entityId": "af8e1888-062c-4f4f-9222-24462e403ed8",
+    "uuid": "af8e1888-062c-4f4f-9222-24462e403ed8"
+  }
+]
