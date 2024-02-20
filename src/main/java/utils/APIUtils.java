@@ -30,4 +30,12 @@ public class APIUtils {
                 .get(endpoint);
     }
 
+    public static Response sendPostRequest(RequestSpecification request, String endpoint, Object body){
+        return request.contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(body)
+                .when()
+                .post(endpoint);
+    }
+
 }
