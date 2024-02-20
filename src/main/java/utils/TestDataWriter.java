@@ -12,7 +12,8 @@ public class TestDataWriter {
     public static void dataWriter(Object object, String path) {
         ObjectMapper mapper = new ObjectMapper();
 
-        FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\PC\\IdeaProjects\\jira-api-test-rest-assured-team1\\src\\test\\resources\\test_data\\" + path);
+        FileOutputStream fileOutputStream = new FileOutputStream(System.getProperty("user.dir") + "/src/test" +
+                "/resources/test_data/" + path);
 
         mapper.writeValue(fileOutputStream, object);
     }

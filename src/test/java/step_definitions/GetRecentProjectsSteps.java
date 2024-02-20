@@ -31,7 +31,7 @@ public class GetRecentProjectsSteps extends BaseSteps {
     @And("The response features of projects should match with features in json file")
     public void theResponseFeaturesOfProjectsShouldMatchWithFeaturesInJsonFile() {
         ObjectMapper mapper = new ObjectMapper();
-        File file = new File("C:\\Users\\PC\\IdeaProjects\\jira-api-test-rest-assured-team1\\src\\test\\resources\\test_data\\recent-projects.json");
+        File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/recent-projects.json");
         List<Project> expectedProjects;
         try {
             expectedProjects = mapper.readValue(file, new TypeReference<>() {
