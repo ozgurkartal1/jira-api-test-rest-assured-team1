@@ -5,6 +5,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Map;
 
 public class APIUtils {
@@ -37,6 +39,14 @@ public class APIUtils {
                 .when()
                 .post(endpoint);
     }
+    public static Response sendPostRequest(RequestSpecification request, String endpoint,String key, File value){
+        //.multiPart("file", new File(filePath), "image/png")
+        return request
+                .multiPart(key,value,"text/plain")
+                .when().log().all()
+                .post(endpoint);
+    }
+
     public static Response sendPutRequest(RequestSpecification request,String endpoint,Object body){
         return request.contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
@@ -48,6 +58,7 @@ public class APIUtils {
         return request.when()
                 .delete(endpoint);
     }
+
 
 
 }
