@@ -1,0 +1,21 @@
+{
+
+  "update": {
+    "labels": [
+      {
+        "add": "PUT"
+      },
+      {
+        "remove": "POST"
+      },
+      {
+        "remove": "CREATE-ISSUE"
+      }
+    ],
+    "summary": [
+      {
+        "set": "TEST - EDIT ISSUE"
+      }
+    ]
+  }
+}
