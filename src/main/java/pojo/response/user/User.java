@@ -1,4 +1,4 @@
-package pojo.response;
+package pojo.response.user;
 
 public class User {
 	private String accountId;

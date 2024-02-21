@@ -6,7 +6,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
 import org.assertj.core.api.SoftAssertions;
-import pojo.response.Project;
+
+import pojo.response.project.Project;
 import utils.APIUtils;
 
 

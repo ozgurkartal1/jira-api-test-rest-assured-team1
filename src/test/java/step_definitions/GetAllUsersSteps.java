@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
 import org.assertj.core.api.Assertions;
-import pojo.response.User;
+import pojo.response.user.User;
 import utils.APIUtils;
 import utils.TestDataWriter;
 

@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
-import pojo.response.User;
+import pojo.response.user.User;
 import utils.APIUtils;
 import utils.TestDataReader;
 
