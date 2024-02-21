@@ -37,5 +37,17 @@ public class APIUtils {
                 .when()
                 .post(endpoint);
     }
+    public static Response sendPutRequest(RequestSpecification request,String endpoint,Object body){
+        return request.contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(body)
+                .when()
+                .put(endpoint);
+    }
+    public static Response sendDeleteRequest(RequestSpecification request,String endpoint){
+        return request.when()
+                .delete(endpoint);
+    }
+
 
 }
