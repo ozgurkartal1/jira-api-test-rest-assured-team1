@@ -1,8 +1,8 @@
-package pojo.response;
+package pojo.response.user;
 
 import java.util.List;
 
-public class ApplicationRoles{
+public class Groups{
 	private int size;
 	private List<Object> items;
 

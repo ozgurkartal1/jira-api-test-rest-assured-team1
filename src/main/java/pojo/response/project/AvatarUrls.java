@@ -1,4 +1,4 @@
-package pojo.response;
+package pojo.response.project;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

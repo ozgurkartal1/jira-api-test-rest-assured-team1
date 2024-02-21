@@ -1,4 +1,4 @@
-package pojo.response;
+package pojo.response.project;
 
 public class Project {
 	private AvatarUrls avatarUrls;
