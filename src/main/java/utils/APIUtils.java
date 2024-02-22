@@ -42,7 +42,9 @@ public class APIUtils {
     public static Response sendPostRequest(RequestSpecification request, String endpoint,String key, File value){
         //.multiPart("file", new File(filePath), "image/png")
         return request
-                .multiPart(key,value,"text/plain")
+                .header("X-Atlassian-Token", "no-check")
+                .contentType(ContentType.MULTIPART)
+                .multiPart(key, value)
                 .when().log().all()
                 .post(endpoint);
     }
