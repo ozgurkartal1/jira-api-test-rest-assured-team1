@@ -14,7 +14,7 @@ public class Hooks {
 
     @Before
     public void setUpEnvironment(Scenario scenario){
-        logger.info("Scenerio " + scenario.getName() + "STARTED!");
+        logger.info("Scenario " + scenario.getName() + "STARTED!");
     }
 
     @After

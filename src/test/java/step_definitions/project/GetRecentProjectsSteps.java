@@ -1,13 +1,16 @@
-package step_definitions;
+package step_definitions.project;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
 
 import pojo.response.project.Project;
+import step_definitions.BaseSteps;
 import utils.APIUtils;
 
 
@@ -21,12 +24,16 @@ public class GetRecentProjectsSteps extends BaseSteps {
 
     SoftAssertions softAssertions = new SoftAssertions();
 
+    Logger logger= LogManager.getLogger(GetProjectSteps.class);
+
     @When("The user sends GET request to get recent projects endpoint")
     public void theUserSendsGETRequestToGetRecentProjectsEndpoint() {
 
         response = APIUtils.sendGetRequest(request, GET_RECENT_PROJECTS_ENDPOINT);
         actualProjects = response.as(new TypeRef<List<Project>>() {
         });
+
+        logger.info("The user sends GET request to get recent projects endpoint");
     }
 
     @And("The response features of projects should match with features in json file")
@@ -51,10 +58,14 @@ public class GetRecentProjectsSteps extends BaseSteps {
         });
 
         softAssertions.assertAll();
+
+        logger.debug("The response features of projects should match with features in json file");
     }
 
     @When("The user sends GET request to get invalid recent projects endpoint as {string}")
     public void theUserSendsGETRequestToGetInvalidRecentProjectsEndpointAs(String endpoint) {
         response = APIUtils.sendGetRequest(request, endpoint);
+
+        logger.info("The user sends GET request to get invalid recent projects endpoint as " +endpoint);
     }
 }

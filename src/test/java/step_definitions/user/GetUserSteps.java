@@ -1,4 +1,4 @@
-package step_definitions;
+package step_definitions.user;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -6,10 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
 import pojo.response.user.User;
+import step_definitions.BaseSteps;
 import utils.APIUtils;
 import utils.TestDataReader;
 
-public class GetUserSteps extends BaseSteps{
+public class GetUserSteps extends BaseSteps {
 
     Logger logger = LogManager.getLogger(GetUserSteps.class);
 

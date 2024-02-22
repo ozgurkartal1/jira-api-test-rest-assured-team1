@@ -23,6 +23,8 @@ public abstract class BaseSteps {
 
     protected final String POST_CREATE_ISSUE_ENDPOINT;
 
+    protected static String commentId;
+
     public BaseSteps() {
        RestAssured.baseURI = ConfigManager.getProperty("BaseURI");
        GET_ALL_USERS_ENDPOINT = ConfigManager.getProperty("api.get.all.users.endpoint");
