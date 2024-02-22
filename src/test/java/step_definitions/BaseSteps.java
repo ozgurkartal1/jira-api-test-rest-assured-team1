@@ -23,7 +23,11 @@ public abstract class BaseSteps {
 
     protected final String POST_CREATE_ISSUE_ENDPOINT;
 
+    protected final String DELETE_ATTACHMENT_ENDPOINT;
+
     protected static String commentId;
+
+    protected static String attachmentId;
 
     public BaseSteps() {
        RestAssured.baseURI = ConfigManager.getProperty("BaseURI");
@@ -32,6 +36,7 @@ public abstract class BaseSteps {
        FIND_USERS_ENDPOINT = ConfigManager.getProperty("api.find.users.endpoint");
        GET_RECENT_PROJECTS_ENDPOINT = ConfigManager.getProperty("api.get.recent.projects.endpoint");
        GET_PROJECT_ENDPOINT = ConfigManager.getProperty("api.get.project.endpoint");
-        POST_CREATE_ISSUE_ENDPOINT = ConfigManager.getProperty("api.create.issue.endpoint");
+       POST_CREATE_ISSUE_ENDPOINT = ConfigManager.getProperty("api.create.issue.endpoint");
+       DELETE_ATTACHMENT_ENDPOINT = ConfigManager.getProperty("api.delete.attachment.endpoint");
     }
 }
