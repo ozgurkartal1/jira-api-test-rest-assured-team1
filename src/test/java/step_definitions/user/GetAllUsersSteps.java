@@ -1,10 +1,11 @@
-package step_definitions;
+package step_definitions.user;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
 import org.assertj.core.api.Assertions;
 import pojo.response.user.User;
+import step_definitions.BaseSteps;
 import utils.APIUtils;
 import utils.TestDataWriter;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GetAllUsersSteps extends BaseSteps{
+public class GetAllUsersSteps extends BaseSteps {
 
     List<User> users;
 

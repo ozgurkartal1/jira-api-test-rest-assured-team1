@@ -1,4 +1,4 @@
-package step_definitions;
+package step_definitions.issue;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -6,6 +6,7 @@ import org.assertj.core.api.SoftAssertions;
 import pojo.request.edit_issue.EditIssue;
 import pojo.request.issue.IssueReq;
 import pojo.response.Issue.IssueRes;
+import step_definitions.BaseSteps;
 import utils.APIUtils;
 import utils.TestDataReader;
 import utils.TestDataWriter;
