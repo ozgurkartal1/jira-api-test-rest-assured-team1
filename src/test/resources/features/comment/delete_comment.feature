@@ -1,3 +1,4 @@
+@comment
 Feature: Delete comment
   Background:
     Given The user is in base URI

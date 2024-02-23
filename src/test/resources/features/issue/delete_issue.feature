@@ -1,3 +1,4 @@
+@issue
 Feature: Delete issue
 
   Background:

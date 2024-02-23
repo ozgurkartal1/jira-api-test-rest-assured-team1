@@ -10,19 +10,21 @@ import utils.APIUtils;
 
 public class DeleteAttachmentSteps extends BaseSteps {
 
-    Logger logger = LogManager.getLogger(DeleteAttachmentSteps.class);
-    @When("The user sends DELETE request to delete attachment endpoint with attachment id")
-    public void theUserSendsDELETERequestToDeleteAttachmentEndpointWithAttachmentId() {
-        String endpoint = DELETE_ATTACHMENT_ENDPOINT + "/" + attachmentId.substring(1, attachmentId.length() - 1);
-        response = APIUtils.sendDeleteRequest(request, endpoint);
+	Logger logger = LogManager.getLogger(DeleteAttachmentSteps.class);
 
-        logger.info("The user sends DELETE request to delete attachment endpoint with attachment id");
-    }
+	@When("The user sends DELETE request to delete attachment endpoint with attachment id")
+	public void theUserSendsDELETERequestToDeleteAttachmentEndpointWithAttachmentId() {
+		String endpoint = DELETE_ATTACHMENT_ENDPOINT + "/" + attachmentId.substring(1, attachmentId.length() - 1);
+		response = APIUtils.sendDeleteRequest(request, endpoint);
 
-    @And("Validate that the specified attachment deleted")
-    public void validateThatTheSpecifiedAttachmentDeleted() {
-        Assertions.assertThat(response.jsonPath().getList("fields.attachment")).isEmpty();
+		logger.info("The user sends DELETE request to delete attachment endpoint with attachment id");
+	}
 
-        logger.debug("Validate that the specified attachment deleted");
-    }
+	@And("Validate that the specified attachment deleted")
+	public void validateThatTheSpecifiedAttachmentDeleted() {
+		Assertions.assertThat(response.jsonPath().getList("fields.attachment")).isEmpty();
+
+		logger.debug("Validate that the specified attachment deleted");
+	}
+
 }

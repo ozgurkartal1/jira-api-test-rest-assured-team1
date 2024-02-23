@@ -2,23 +2,26 @@ package pojo.response.user;
 
 import java.util.List;
 
-public class ApplicationRoles{
+public class ApplicationRoles {
+
 	private int size;
+
 	private List<Object> items;
 
-	public void setSize(int size){
+	public void setSize(int size) {
 		this.size = size;
 	}
 
-	public int getSize(){
+	public int getSize() {
 		return size;
 	}
 
-	public void setItems(List<Object> items){
+	public void setItems(List<Object> items) {
 		this.items = items;
 	}
 
-	public List<Object> getItems(){
+	public List<Object> getItems() {
 		return items;
 	}
+
 }

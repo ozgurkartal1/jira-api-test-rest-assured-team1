@@ -1,3 +1,4 @@
+@finduser
 Feature: Find users
 
   Background:

@@ -13,46 +13,52 @@ import utils.APIUtils;
 import utils.TestDataReader;
 
 public class UpdateCommentSteps extends BaseSteps {
-    String key;
-    AddComment addComment;
-    Logger logger= LogManager.getLogger(UpdateCommentSteps.class);
-    @When("The user sends PUT request to the update comment endpoint with specific comment id")
-    public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificCommentId() {
-        addComment=TestDataReader.dataReader("update-comment.json", AddComment.class);
 
-        key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
-        String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/comment/" + commentId;
+	String key;
 
-        response = APIUtils.sendPutRequest(request, endpoint,addComment);
-        logger.info("The user sends PUT request to the update comment endpoint with specific comment id");
-    }
+	AddComment addComment;
 
-    @And("The user validates that text has been updated as expected")
-    public void theUserValidatesThatTextHasBeenUpdatedAsExpected() {
-        SoftAssertions assertions=new SoftAssertions();
-        String actualText= response.jsonPath().getString("body.content[0].content[0].text");
-        String expectedText= addComment.getBody().getContent().get(0).getContent().get(0).getText();
-        assertions.assertThat(actualText).isEqualTo(expectedText);
+	Logger logger = LogManager.getLogger(UpdateCommentSteps.class);
 
-        assertions.assertAll();
-        logger.debug("The user validates that text has been updated as expected");
-    }
+	@When("The user sends PUT request to the update comment endpoint with specific comment id")
+	public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithSpecificCommentId() {
+		addComment = TestDataReader.dataReader("update-comment.json", AddComment.class);
 
-    @When("The user sends PUT request to the update comment endpoint with invalid comment id as {string}")
-    public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithInvalidCommentIdAs(String invalidCommentId) {
-        addComment=TestDataReader.dataReader("update-comment.json", AddComment.class);
+		key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
+		String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/comment/" + commentId;
 
-        key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
-        String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/comment/" + invalidCommentId;
+		response = APIUtils.sendPutRequest(request, endpoint, addComment);
+		logger.info("The user sends PUT request to the update comment endpoint with specific comment id");
+	}
 
-        response = APIUtils.sendPutRequest(request, endpoint,addComment);
-        logger.info("The user sends PUT request to the update comment endpoint with invalid comment id as "+invalidCommentId);
-    }
+	@And("The user validates that text has been updated as expected")
+	public void theUserValidatesThatTextHasBeenUpdatedAsExpected() {
+		SoftAssertions assertions = new SoftAssertions();
+		String actualText = response.jsonPath().getString("body.content[0].content[0].text");
+		String expectedText = addComment.getBody().getContent().get(0).getContent().get(0).getText();
+		assertions.assertThat(actualText).isEqualTo(expectedText);
 
-    @And("The error message should be displayed")
-    public void theErrorMessageShouldBeDisplayed() {
-        Assertions.assertThat(response.jsonPath().getString("errorMessages[0]")).isNotEmpty();
-        logger.debug("The error message should be displayed");
+		assertions.assertAll();
+		logger.debug("The user validates that text has been updated as expected");
+	}
 
-    }
+	@When("The user sends PUT request to the update comment endpoint with invalid comment id as {string}")
+	public void theUserSendsPUTRequestToTheUpdateCommentEndpointWithInvalidCommentIdAs(String invalidCommentId) {
+		addComment = TestDataReader.dataReader("update-comment.json", AddComment.class);
+
+		key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
+		String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/comment/" + invalidCommentId;
+
+		response = APIUtils.sendPutRequest(request, endpoint, addComment);
+		logger.info("The user sends PUT request to the update comment endpoint with invalid comment id as "
+				+ invalidCommentId);
+	}
+
+	@And("The error message should be displayed")
+	public void theErrorMessageShouldBeDisplayed() {
+		Assertions.assertThat(response.jsonPath().getString("errorMessages[0]")).isNotEmpty();
+		logger.debug("The error message should be displayed");
+
+	}
+
 }

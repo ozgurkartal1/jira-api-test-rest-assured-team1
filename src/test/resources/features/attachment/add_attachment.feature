@@ -1,3 +1,4 @@
+@attachment
 Feature: Add attachment to issue
 
   Background:

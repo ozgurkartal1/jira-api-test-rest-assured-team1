@@ -3,30 +3,33 @@ package pojo.request.issue;
 import java.util.List;
 
 public class Content {
-    private String type;
 
-    private List<ContentItem> content;
+	private String type;
 
-    public Content(){}
+	private List<ContentItem> content;
 
-    public Content(String type, List<ContentItem> content) {
-        this.type = type;
-        this.content = content;
-    }
+	public Content() {
+	}
 
-    public String getType() {
-        return type;
-    }
+	public Content(String type, List<ContentItem> content) {
+		this.type = type;
+		this.content = content;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public List<ContentItem> getContent() {
-        return content;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public void setContent(List<ContentItem> content) {
-        this.content = content;
-    }
+	public List<ContentItem> getContent() {
+		return content;
+	}
+
+	public void setContent(List<ContentItem> content) {
+		this.content = content;
+	}
+
 }

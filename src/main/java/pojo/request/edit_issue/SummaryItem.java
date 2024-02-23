@@ -1,13 +1,15 @@
 package pojo.request.edit_issue;
 
-public class SummaryItem{
+public class SummaryItem {
+
 	private String set;
 
-	public void setSet(String set){
+	public void setSet(String set) {
 		this.set = set;
 	}
 
-	public String getSet(){
+	public String getSet() {
 		return set;
 	}
+
 }

@@ -1,3 +1,4 @@
+@attachment
 Feature: Delete attachment
 
   Background:

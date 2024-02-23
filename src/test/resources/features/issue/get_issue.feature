@@ -1,3 +1,4 @@
+@issue
 Feature: Get issue with id or key
 
   Background:

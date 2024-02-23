@@ -8,28 +8,30 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 
-public class CommonSteps extends BaseSteps{
+public class CommonSteps extends BaseSteps {
 
-    Logger logger = LogManager.getLogger(CommonSteps.class);
-    @Given("The user is in base URI")
-    public void theUserIsInBaseURI() {
-        request = RestAssured.given();
-        logger.info("The user is in base URI");
-    }
+	Logger logger = LogManager.getLogger(CommonSteps.class);
 
-    @And("The authentication is completed to reach jira apis")
-    public void theAuthenticationIsCompletedToReachJiraApis() {
-        String username = System.getenv("jiraUsername");
-        String token = System.getenv("jiraToken");
+	@Given("The user is in base URI")
+	public void theUserIsInBaseURI() {
+		request = RestAssured.given();
+		logger.info("The user is in base URI");
+	}
 
-        request = request.auth().preemptive().basic(username, token);
+	@And("The authentication is completed to reach jira apis")
+	public void theAuthenticationIsCompletedToReachJiraApis() {
+		String username = System.getenv("jiraUsername");
+		String token = System.getenv("jiraToken");
 
-        logger.info("The authentication is completed to reach jira apis");
-    }
+		request = request.auth().preemptive().basic(username, token);
 
-    @Then("The status code should be {int}")
-    public void theStatusCodeShouldBe(int statusCode) {
-        Assertions.assertThat(response.getStatusCode()).isEqualTo(statusCode);
-        logger.debug("The status code should be " + statusCode);
-    }
+		logger.info("The authentication is completed to reach jira apis");
+	}
+
+	@Then("The status code should be {int}")
+	public void theStatusCodeShouldBe(int statusCode) {
+		Assertions.assertThat(response.getStatusCode()).isEqualTo(statusCode);
+		logger.debug("The status code should be " + statusCode);
+	}
+
 }

@@ -1,3 +1,4 @@
+@issue
 Feature: Creating issue
 
   Background:

@@ -1,3 +1,4 @@
+@project
 Feature: Get recent projects
 
   Background:

@@ -1,3 +1,4 @@
+@comment
 Feature: Get comment
 
   Background:

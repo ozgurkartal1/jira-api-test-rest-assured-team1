@@ -10,11 +10,13 @@ import java.util.List;
 
 public class TestDataReader {
 
-    @SneakyThrows
-    public static <T> T dataReader(String path, Class<T> typeValue){
-        ObjectMapper mapper = new ObjectMapper();
-        FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/test_data/" + path);
+	@SneakyThrows
+	public static <T> T dataReader(String path, Class<T> typeValue) {
+		ObjectMapper mapper = new ObjectMapper();
+		FileInputStream fileInputStream = new FileInputStream(
+				System.getProperty("user.dir") + "/src/test/resources/test_data/" + path);
 
-        return mapper.readValue(fileInputStream, typeValue);
-    }
+		return mapper.readValue(fileInputStream, typeValue);
+	}
+
 }

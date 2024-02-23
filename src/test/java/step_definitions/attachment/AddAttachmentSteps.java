@@ -16,52 +16,55 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 public class AddAttachmentSteps extends BaseSteps {
-    Logger logger= LogManager.getLogger(AddAttachmentSteps.class);
-    @When("The user sends POST request to add attachment endpoint to specified issue with txt file")
-    public void theUserSendsPOSTRequestToAddAttachmentEndpointToSpecifiedIssueWithPngFile() throws IOException {
-        String key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
-        String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/attachments";
 
-        File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-1.txt");
+	Logger logger = LogManager.getLogger(AddAttachmentSteps.class);
 
-        response = APIUtils.sendPostRequest(request,endpoint,"file",file);
+	@When("The user sends POST request to add attachment endpoint to specified issue with txt file")
+	public void theUserSendsPOSTRequestToAddAttachmentEndpointToSpecifiedIssueWithPngFile() throws IOException {
+		String key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
+		String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + key + "/attachments";
 
-        attachmentId = response.jsonPath().getString("id");
+		File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-1.txt");
 
-        logger.info("The user sends POST request to add attachment endpoint to specified issue with txt file");
-    }
+		response = APIUtils.sendPostRequest(request, endpoint, "file", file);
 
-    @And("The attachment id should not be empty or null")
-    public void theAttachmentIdShouldNotBeEmptyOrNull() {
-        Assertions.assertThat(attachmentId).isNotEmpty();
-        Assertions.assertThat(attachmentId).isNotNull();
+		attachmentId = response.jsonPath().getString("id");
 
-        logger.debug("The attachment id should not be empty or null");
-    }
+		logger.info("The user sends POST request to add attachment endpoint to specified issue with txt file");
+	}
 
-    @And("The response creation date must be the same with the date of creation date")
-    public void theResponseCreationDateMustBeTheSameWithTheDateOfCreationDate() {
-        Date date = new Date();
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
-        String expectedTime = dateFormatter.format(date);
-        String actualTime = response.jsonPath().getString("created");
-        actualTime = actualTime.split("T")[0].substring(1);
-        Assertions.assertThat(actualTime).isEqualTo(expectedTime);
+	@And("The attachment id should not be empty or null")
+	public void theAttachmentIdShouldNotBeEmptyOrNull() {
+		Assertions.assertThat(attachmentId).isNotEmpty();
+		Assertions.assertThat(attachmentId).isNotNull();
 
-        logger.debug("The response creation date must be the same with the date of creation date");
-    }
+		logger.debug("The attachment id should not be empty or null");
+	}
 
-    @When("The user sends POST request to add attachment endpoint with invalid {string} key with txt file")
-    public void theUserSendsPOSTRequestToAddAttachmentEndpointWithInvalidIdWithTxtFile(String invalidIssueKey) {
-        String key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
-        String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + invalidIssueKey + "/attachments";
+	@And("The response creation date must be the same with the date of creation date")
+	public void theResponseCreationDateMustBeTheSameWithTheDateOfCreationDate() {
+		Date date = new Date();
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		String expectedTime = dateFormatter.format(date);
+		String actualTime = response.jsonPath().getString("created");
+		actualTime = actualTime.split("T")[0].substring(1);
+		Assertions.assertThat(actualTime).isEqualTo(expectedTime);
 
-        File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-1.txt");
+		logger.debug("The response creation date must be the same with the date of creation date");
+	}
 
-        response = APIUtils.sendPostRequest(request,endpoint,"file",file);
+	@When("The user sends POST request to add attachment endpoint with invalid {string} key with txt file")
+	public void theUserSendsPOSTRequestToAddAttachmentEndpointWithInvalidIdWithTxtFile(String invalidIssueKey) {
+		String key = TestDataReader.dataReader("issue-res.json", IssueRes.class).getKey();
+		String endpoint = POST_CREATE_ISSUE_ENDPOINT + "/" + invalidIssueKey + "/attachments";
 
-        logger.info("The user sends POST request to add attachment endpoint with invalid" + invalidIssueKey + "key with txt file");
-    }
+		File file = new File(System.getProperty("user.dir") + "/src/test/resources/test_data/team-1.txt");
+
+		response = APIUtils.sendPostRequest(request, endpoint, "file", file);
+
+		logger.info("The user sends POST request to add attachment endpoint with invalid" + invalidIssueKey
+				+ "key with txt file");
+	}
+
 }

@@ -1,3 +1,4 @@
+@comment
 Feature: Add comment
   Background:
     Given The user is in base URI

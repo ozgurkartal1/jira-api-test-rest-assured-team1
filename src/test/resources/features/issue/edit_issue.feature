@@ -1,3 +1,4 @@
+@issue
 Feature: Edit issue feature
 
   Background:
