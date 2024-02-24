@@ -25,6 +25,8 @@ public abstract class BaseSteps {
 
 	protected final String DELETE_ATTACHMENT_ENDPOINT;
 
+	protected static String issueKey;
+
 	protected static String commentId;
 
 	protected static String attachmentId;

@@ -3,6 +3,7 @@ Feature: Add comment
   Background:
     Given The user is in base URI
     And The authentication is completed to reach jira apis
+    When The user sends a POST request to the create issue endpoint
 
     Scenario: Test add comment method functionality with valid endpoint
       When The user sends POST request to add comment endpoint with specific issue key

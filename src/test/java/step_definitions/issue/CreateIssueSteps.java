@@ -23,6 +23,8 @@ public class CreateIssueSteps extends BaseSteps {
 		IssueRes issueRes = response.as(IssueRes.class);
 		TestDataWriter.dataWriter(issueRes, "issue-res.json");
 
+		issueKey = response.jsonPath().getString("key");
+
 		logger.info("The user sends a POST request to the create issue endpoint");
 	}
 

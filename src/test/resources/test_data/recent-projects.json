@@ -1,6 +1,26 @@
 [
   {
     "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+    "self": "https://inaracademy.atlassian.net/rest/api/3/project/10004",
+    "id": "10004",
+    "key": "TT",
+    "name": "TEST-Team1",
+    "avatarUrls": {
+      "48x48": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10411",
+      "24x24": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10411?size=small",
+      "16x16": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10411?size=xsmall",
+      "32x32": "https://inaracademy.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10411?size=medium"
+    },
+    "projectTypeKey": "software",
+    "simplified": true,
+    "style": "next-gen",
+    "isPrivate": false,
+    "properties": {},
+    "entityId": "8ef143be-66eb-409a-8a58-33ab07ced8ad",
+    "uuid": "8ef143be-66eb-409a-8a58-33ab07ced8ad"
+  },
+  {
+    "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
     "self": "https://inaracademy.atlassian.net/rest/api/3/project/10000",
     "id": "10000",
     "key": "T1",

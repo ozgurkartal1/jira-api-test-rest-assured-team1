@@ -4,6 +4,7 @@ Feature: Add attachment to issue
   Background:
     Given The user is in base URI
     And The authentication is completed to reach jira apis
+    When The user sends a POST request to the create issue endpoint
 
   Scenario: Test add attachment to issue method functionality with valid issue id
     When The user sends POST request to add attachment endpoint to specified issue with txt file

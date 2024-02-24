@@ -4,6 +4,7 @@ Feature: Get issue with id or key
   Background:
     Given The user is in base URI
     And The authentication is completed to reach jira apis
+    When The user sends a POST request to the create issue endpoint
 
   Scenario: Test get issue method functionality
     When The user sends GET request to the get issue endpoint with created issue key
