@@ -1,4 +1,4 @@
-@issue
+@issue @smoke @regression
 Feature: Delete issue
 
   Background:

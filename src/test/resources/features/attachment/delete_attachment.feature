@@ -1,4 +1,4 @@
-@attachment
+@attachment @smoke @regression
 Feature: Delete attachment
 
   Background:

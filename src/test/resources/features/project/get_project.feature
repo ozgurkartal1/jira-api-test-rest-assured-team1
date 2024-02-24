@@ -1,4 +1,4 @@
-@project
+@project @smoke @regression
 Feature: Get project
 
   Background:

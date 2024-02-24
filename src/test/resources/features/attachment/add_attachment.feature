@@ -1,4 +1,4 @@
-@attachment
+@attachment @smoke @regression
 Feature: Add attachment to issue
 
   Background:

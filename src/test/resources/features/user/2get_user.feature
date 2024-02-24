@@ -1,4 +1,4 @@
-@users
+@users @smoke @regression
 Feature: Get a user
 
   Background:

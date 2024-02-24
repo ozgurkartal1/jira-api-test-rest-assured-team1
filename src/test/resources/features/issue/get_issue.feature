@@ -1,4 +1,4 @@
-@issue
+@issue @regression
 Feature: Get issue with id or key
 
   Background:

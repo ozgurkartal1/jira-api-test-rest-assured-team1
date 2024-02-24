@@ -1,4 +1,4 @@
-@finduser
+@finduser @smoke @regression
 Feature: Find users
 
   Background:

@@ -1,4 +1,4 @@
-@issue
+@issue @regression
 Feature: Edit issue feature
 
   Background:
