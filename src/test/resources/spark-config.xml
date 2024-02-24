@@ -11,9 +11,9 @@
         <!-- defaults to https -->
         <protocol>https</protocol>
         <!-- title of the document -->
-        <documentTitle>Booking - Test Report</documentTitle>
+        <documentTitle>JIRA API Test-Test Report</documentTitle>
         <!-- report name - displayed at top-nav -->
-        <reportName>Booking</reportName>
+        <reportName>JIRA</reportName>
         <!-- timestamp format -->
         <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
         <!-- custom javascript -->
